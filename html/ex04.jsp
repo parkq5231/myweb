@@ -9,8 +9,9 @@
         <body>
             <%
             String gender=request.getParameter("subject1");
-
-
+            %>
+            <h3><%=gender%></h3>            
+            <%
     String[] resultAll=request.getParameterValues("subject");
     %>
                 <%
@@ -22,5 +23,5 @@
     %>
     
             </body>
-            <h3>성별: <%=gender%></h3>            
+
         </html>

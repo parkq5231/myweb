@@ -10,18 +10,16 @@
             <%
             String gender=request.getParameter("subject1");
             %>
-            <h3><%=gender%></h3>            
-            <%
+                <h3><%=gender%></h3>
+                <%
     String[] resultAll=request.getParameterValues("subject");
     %>
-                <%
+                    <%
         for(String result : resultAll){
     %>
-                    <h3><%=result%></h3>
-                <% 
+                        <h3><%=result%></h3>
+                    <% 
         }
     %>
-    
-            </body>
-
-        </html>
+                </body>
+            </html>

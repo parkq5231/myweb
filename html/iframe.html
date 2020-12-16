@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>html/iframe.html</title>
+    </head>
+    <body>
+        <div style="background: lime;">
+        <span>
+            <a href="basic.html" target="iframe_a">Basic화면</a>
+        </span>
+        <span>
+        <a href="intro.html" target="iframe_a">인사말</a>
+    </span>
+        <span>
+        <a href="lecture.html" target="iframe_a">저자소개</a>
+    </span>
+        <span>
+        <a href="http://cafe.naver.com/go2web" target="iframe_b">홈페이지</a>
+    </span>
+</div>
+        <iframe
+            src="basic.html"
+            name="iframe_a"
+            scrolling="auto"
+            width="500px"
+            height="400px"
+            frameborder="1"></iframe>
+        <iframe
+            src="div.html"
+            width="400"
+            height="200"
+            name="iframe_b"
+            scrolling="no"></iframe>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>html/js.html</title>
+    </head>
+    <body>
+        <div id="show">Hello</div>
+        <ul id="fruit"></ul>
+        <ol id="김밥">김밥의 리스트</ol>
+        <table id="tbl" border="1"></table>
+        <script>
+            var name = document.getElementById('show').innerHTML;
+            console.log(name);
+            document.getElementById('show').innerHTML = "World";
+
+            var divTag = document.createElement("div");
+            divTag.innerHTML = "Nice"; //<div>Nice</div> innerHTML이 content영역에 넣는거니까
+            document.getElementById('show').append(divTag);
+
+            var li_1 = document.createElement('li');
+            var li_2 = document.createElement('li');
+            li_1.innerHTML = "Apple";
+            li_2.innerHTML = "Orange";
+            document.getElementById('fruit').append(li_1);
+            document.getElementById('fruit').append(li_2);
+
+            var ol_1=document.createElement('li');
+            ol_1.innerHTML="만두";
+            document.getElementById('김밥').append(ol_1);
+            
+
+            var tr_1=document.createElement('tr');
+            var td_1=document.createElement('td');
+            document.getElementById('tbl').append(tr_1);
+            
+            
+            
+            
+
+
+            
+
+
+            //////////////////////////////////////////////
+            var grade=3;
+            for(var i=1;i<=9;i++){
+            var str= grade+'*'+i+'='+(grade*i);
+            console.log(str);
+            }
+            var sum=0;
+            for(var i=1;i<=100;i++){
+                
+                sum+=i;
+            }
+            console.log("결과값: "+sum+"입니다.");
+        </script>
+    </body>
+</html>

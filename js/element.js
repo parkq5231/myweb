@@ -7,7 +7,7 @@ function turnOn(){
     console.log(img1[0]);
 }
 function turnOff(){
-    let img2=document.getElementsByTagName('img');
-    img2[0].src='https://www.w3schools.com/js/pic_bulboff.gif';
-    console.log(img2[0]);
+    let img1=document.getElementsByTagName('img');
+    img1[0].src='https://www.w3schools.com/js/pic_bulboff.gif';
+    console.log(img1[0]);
 }

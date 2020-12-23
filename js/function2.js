@@ -15,11 +15,17 @@ for (i=0;i<5;i++){
 findMax();
 
 function findMax(){
-    numAry[];
+    let aa=0;    
+    for(i=0;i<numAry.length;i++){
+    if (aa < numAry[i]){
+        aa=numAry[i];
+        }
+    }
+    document.write(aa);
 }
-let v;
-let name1=window.prompt("숫자를 입력하세요.");
-let name2=window.prompt("숫자를 입력하세요.");
+
+// let name1=window.prompt("숫자를 입력하세요.");
+// let name2=window.prompt("숫자를 입력하세요.");
 // checkGrade(name1);//100:A,90이상:B,80이상:C,그외:D
 function checkGrade(aac){
     let n1=parseInt(aac);
@@ -33,7 +39,8 @@ function checkGrade(aac){
         document.write('등급은 D입니다.');
     }
 }
-diffSum(name1,name2);//입력받은 두 수 사이의 합: 1~5 1,2,3,4 나오도록
+// diffSum(name1,name2);
+//입력받은 두 수 사이의 합: 1~5 1,2,3,4 나오도록
 function diffSum(name1,name2){
     let n1=parseInt(name1);
     let n2=parseInt(name2);
@@ -47,10 +54,10 @@ function diffSum(name1,name2){
         document.write("두수 사이의 합:"+num);
 }
 
-// sum(name1,name2);
-// function sum(a,b){
-//     let n1=parseInt(a);//'30'과 같은 것들을 숫자로 바꿔줌
-//     let n2=parseInt(b);
-//     console.log(n1+n2);
-// }
+//  sum(name1,name2);
+ function sum(a,b){
+     let n1=parseInt(a);//'30'과 같은 것들을 숫자로 바꿔줌
+     let n2=parseInt(b);
+     console.log(n1+n2);
+ }
 

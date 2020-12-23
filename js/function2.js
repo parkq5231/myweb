@@ -17,7 +17,7 @@ findMax();
 function findMax(){
     numAry[];
 }
-
+let v;
 let name1=window.prompt("숫자를 입력하세요.");
 let name2=window.prompt("숫자를 입력하세요.");
 // checkGrade(name1);//100:A,90이상:B,80이상:C,그외:D

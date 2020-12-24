@@ -9,11 +9,18 @@ function input_friend(){
 
     
     let friend={};
+    
     friend.name=namef;
     friend.age=agef;
     friend.hobby=hobbyf;
 
     friends[i++]=friend;
+
+    for (friend of friends){
+        for(field in friend){
+            console.log(friend[field]);
+        }
+    }
 
     let info=document.getElementById('friends');
     let trTag=document.createElement('tr');
@@ -30,12 +37,6 @@ function input_friend(){
     trTag.append(tdTag1);
     trTag.append(tdTag2);
     
-    for (friend of friends){
-        for(field in friend){
-            console.log(friend[field]);
-        }
-    }
-
     // console.log(namef.value, agef.value, hobbyf.value);
     // document.getElementById('show').innerHTML=namef.value+','+ agef.value+','+ hobbyf.value+','+kimbab.value;
     // document.getElementById('result').value=namef.value+','+ agef.value+','+ hobbyf.value+','+kimbab.value;

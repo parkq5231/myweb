@@ -29,8 +29,6 @@ document.write('</tr></table>');
 
 document.write('---------');
 
-
-
 document.write('<table border=1><tr>');
 for (free in friend1){
     document.write('<th>'+free+'</th>');
@@ -54,4 +52,4 @@ for(num of numbers){
         sum=num;
     }
 }
-console.log('가장 큰수: '+sum);
+document.write('가장 큰수: '+sum);

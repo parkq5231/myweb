@@ -1,18 +1,54 @@
-//function2.js
-// function nameFunc(){
-//      let name1=window.prompt("이름을 입력하세요.");
-// // let name1 = document.getElementById('name').value;
-//     console.log('입력한 이름은: '+name1);
+
+let friend1={ }
+friend1.name ='Hong';
+friend1.age=20;
+friend1.hobby='reading';
+let friend2={
+    name:'Hwang',
+    age: 20
+}
+
+let friends=[]; //array
+for(i=0;i<3;i++){
+    let names=window.prompt("이름을 입력하세요.");
+    let age=window.prompt("나이를 입력하세요.");
+    let friend = {};//object type
+    friend.name=names;
+    friend.age=age;
+    friends[i]=friend;
+}
+
+document.write('<table border=1>');
+for(friend of friends){
+    document.write('<tr>');
+    for(field in friend){
+        document.write('<td>'+friend[field]+'</td>');
+    }
+    document.write('</tr>');
+}
+document.write('</table>');
+
+// for(friend of friends){
+//     for(field in friend){
+//         console.log(friend[field]);
+//     }
 // }
-// nameFunc(); 
+
+//function2.js
+ function nameFunc(){
+    // let name1=window.prompt("이름을 입력하세요.");
+    // let name1 = document.getElementById('name').value;
+         console.log('입력한 이름은: '+name1);
+ }
+//  nameFunc(); 
 
 //5개의 숫자를 입력 후 ==5개중 최대값 출력
 let numAry=[];
-for (i=0;i<5;i++){
-    let name1=window.prompt('숫자를입력.');
-    numAry[i]=parseInt(name1);
-}
-findMax();
+// for (i=1;i<=5;i++){
+//     let name1=window.prompt('숫자를입력.');
+//     numAry[i]=parseInt(name1);
+// }
+// findMax();
 
 function findMax(){
     let aa=0;    
@@ -22,6 +58,18 @@ function findMax(){
         }
     }
     document.write(aa);
+}
+
+// findMax2();
+
+function findMax2(){
+    let max=0;
+    for (val of numAry){
+        if ( max < val){
+            max=val;
+        }
+    }
+    document.write("최대 값은: "+max);
 }
 
 // let name1=window.prompt("숫자를 입력하세요.");

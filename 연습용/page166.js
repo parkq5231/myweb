@@ -32,6 +32,12 @@ function page166(){
 
     form.append(input3);
 
+    let input4 = document.createElement('button');
+    input4.innerHTML='button';
+    input4.setAttribute('type','reset');
+    input4.setAttribute('value','다시작성');
+
+    form.append(input4);
 
     let show3=document.getElementById('show3');
     show3.append(h2);

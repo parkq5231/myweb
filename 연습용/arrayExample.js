@@ -15,25 +15,31 @@ let person1 = {};
 persons.push(person1);
 
 
+let tbl=document.createElement('table');
+tbl.setAttribute('border','1');
 
 function drawTable(){
-    let tbl=document.createElement('table');
-    tbl.setAttribute('border','1');
-
     let trTag=document.createElement('tr');
-    tbl.append(trTag);
+    let titles=['이름','나이','점수'];
 
-    let tdTag=document.createElement('td');
-    persons.forEach(function (a,b,c){
-        for (item in a){
-            tdTag.innerHTML=a[item];
-        }
-    })
-        trTag.append(tdTag);
+
+    for (title in titles){
+        let thTag=document.createElement('th');
+        thTag.innerHTML=titles[title];
+        trTag.append(thTag);
+    }
+    tbl.append(trTag);
     
+    persons.forEach(function (a,b,c){
+        let trTag=document.createElement('tr');
+
+        for (item in a){
+            let tdTag=document.createElement('td');
+            tdTag.innerHTML=a[item];
+            trTag.append(tdTag);
+        }
+        tbl.append(trTag);
+    })
     let div =document.getElementById('show2');
     div.append(tbl);
-
-
-
 }

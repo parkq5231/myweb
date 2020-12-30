@@ -9,39 +9,37 @@
 //     console.log(today.getDate());
 //}
 // setCal('2020','06','05');
-
+let dates=[];
 let tbl=document.createElement('table');
 tbl.setAttribute('border','1');
 let tr=document.createElement('tr');
-tbl.append(tr)
-
+tbl.append(tr);
 calendar(2020,12);
+
+dates.forEach(function aa(a,b,c){
+    let td=document.createElement('td');
+        td.innerHTML=a;
+        tr.append(td);
+        if(dates[b] % 7 ==0){
+            tr=document.createElement('tr');
+        }
+        tbl.append(tr);
+    });
+
 function calendar(yyyy,mm){
-    // let dates=[];
     let today = new Date(yyyy,mm,0);
     let today1 = new Date(yyyy+'-'+mm)
-    let firstday=today1.getDay();
+    firstday=today1.getDay();
     let lastday=today.getDate();
-    let td=document.createElement('td');
-    
     for(i=0;i<firstday;i++){
-        td=document.createElement('td');
-        td.innerHTML=' ';
-        tr.append(td);
+        dates.push(" ");
     }
     for(i=1;i<=lastday;i++){
-        td=document.createElement('td');
-        // dates.push(i);
-        td.innerHTML=i;
-        tr.append(td);
-        tbl.append(tr);
-        if(i % 7==0){
-            tr=document.createElement('tr');
-            console.log(td);
-        }
+        dates.push(i);
     }
-    let show =document.getElementById('show');
-    show.append(tbl);
 }
+let show =document.getElementById('show');
+show.append(tbl);
+
 // new Date(2020-06-01) ->getDay로 받고    (1)
 // new Date(2020,06,0) -> getDate로 받는다 (말일)

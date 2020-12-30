@@ -10,21 +10,28 @@
 //}
 // setCal('2020','06','05');
 
-//Date객체 생성
-let today = new Date();
+let tbl=document.createElement('table');
+tbl.setAttribute('border','1');
+let tr=document.createElement('tr');
+tbl.append(tr)
 
-let setDate = new Date(year,month-1,1);
-
-let firstDay=setDate.getDate();
-
-let firstDayName=setDate.getDay();
-
-let lastDay=new Date(
-    today.getFullYear(),
-    today.getMonth()+1,
-    0
-).getDate();
-
-
-console.log(today,setDate,firstDay,firstDayName,lastDay);
-
+calendar(2020,12);
+function calendar(yyyy,mm){
+    // let dates=[];
+    let today = new Date(yyyy,mm,0);
+    let lastday=today.getDate();
+    for(i=0;i<=lastday;i++){
+        // dates.push(i);
+        if(i % 7==0){
+            tr=document.createElement('tr');
+        }
+        let td=document.createElement('td');
+        td.innerHTML=i;
+        tr.append(td);
+        tbl.append(tr);
+    }
+    let show =document.getElementById('show');
+    show.append(tbl);
+}
+// new Date(2020-06-01) ->getDay로 받고    (1)
+// new Date(2020,06,0) -> getDate로 받는다 (말일)

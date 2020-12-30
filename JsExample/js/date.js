@@ -19,16 +19,26 @@ calendar(2020,12);
 function calendar(yyyy,mm){
     // let dates=[];
     let today = new Date(yyyy,mm,0);
+    let today1 = new Date(yyyy+'-'+mm)
+    let firstday=today1.getDay();
     let lastday=today.getDate();
-    for(i=0;i<=lastday;i++){
+    let td=document.createElement('td');
+    
+    for(i=0;i<firstday;i++){
+        td=document.createElement('td');
+        td.innerHTML=' ';
+        tr.append(td);
+    }
+    for(i=1;i<=lastday;i++){
+        td=document.createElement('td');
         // dates.push(i);
-        if(i % 7==0){
-            tr=document.createElement('tr');
-        }
-        let td=document.createElement('td');
         td.innerHTML=i;
         tr.append(td);
         tbl.append(tr);
+        if(i % 7==0){
+            tr=document.createElement('tr');
+            console.log(td);
+        }
     }
     let show =document.getElementById('show');
     show.append(tbl);

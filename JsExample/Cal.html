@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cal"></div>
+    <script>
+        let week=['Sun','Mon','Tue','Wue','Thr','Fri',"Sat"];
+        let date=[];
+        let table=document.createElement('table');
+        table.setAttribute('border','1');
+        for (let i=1;i<=31;i++){
+            date.push(i);
+        }
+        let tr=document.createElement('tr');
+        
+        week.forEach(dayA);
+        date.forEach(dateA);
+        
+        function dayA(a,b,c){
+            let th=document.createElement('th');
+            th.innerHTML=a;
+            th.style.background='yellow';
+            tr.append(th);
+            table.append(tr);
+        }
+        function dateA(a,b,c){
+            if(b %7==0){
+                tr=document.createElement('tr');
+            }
+            let td=document.createElement('td');
+            td.innerHTML=a;
+            tr.append(td);
+            table.append(tr);
+        }
+        let cal =document.getElementById('cal');
+        table.append(tr);
+        cal.append(table);
+    </script>
+</body>
+</html>

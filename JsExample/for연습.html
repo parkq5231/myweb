@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문연습</title>
+</head>
+
+
+<body>
+    <div id="show"></div>
+    <script>
+        function createHeader(a,b,c){
+            let td = document.createElement('th');
+            td.innerHTML=a;
+            tr.append(td);
+            table.append(tr);
+        }
+        function createData(item,idx,ary){
+            if(idx % 7 == 0){
+            tr =  document.createElement('tr');
+            }
+            let td = document.createElement('td');
+            td.innerHTML=item;
+            tr.append(td);
+            table.append(tr); 
+        }
+        let days=['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+        let dates=[];
+        for (let i=1;i<=31;i++){
+            dates.push(i);
+        }        
+        let table= document.createElement('table');
+        table.setAttribute('border','1');
+        table.setAttribute('id','tbl');
+        // console.log(table);
+        let tr =  document.createElement('tr');
+
+        days.forEach(createHeader);
+        dates.forEach(createData);
+        document.getElementById('show').append(table);
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.html</title>
+</head>
+<body>
+    <table border="1" id = 'tbl'>
+        <tr>
+            <td><label for="id">ID</label>
+                <input type="checkbox" name="id" id="id"></td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+        </tr>
+        <tr>
+            <td><label for="id2">ID</label>
+                <input type="checkbox" name="id" id="id2"></td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+        </tr>
+
+    </table>
+    <script>
+        let members=[];
+
+        for (i=1;i<=3;i++){
+            let member={};
+            member.name='홍길동'+i;
+            member.age=20+i+'세';
+            member.hobby='독서'+i;
+            members.push(member);
+        }
+        console.log(members);
+
+        for (aa of members){    
+        let tbl =document.getElementById('tbl');
+        let tr=document.createElement('tr');
+        tbl.append(tr);
+        let td= document.createElement('td');
+        let td2= document.createElement('td');
+        let label = document.createElement('label');
+        let input = document.createElement('input');
+        let button= document.createElement('button');
+        
+        label.setAttribute('for','id3');
+        input.setAttribute('type','checkbox');
+        input.setAttribute('id','id3');
+        
+        label.innerHTML='ID ';
+        button.innerHTML='OK';
+        
+        td.append(label);
+        td.append(input);
+        tr.append(td);
+        td2.append(button);
+        
+        for(bb in aa){
+            td= document.createElement('td');
+            td.innerHTML=aa[bb];
+            tr.append(td);
+        }
+        
+        tr.append(td2);
+    }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form2.html</title>
+</head>
+<body>
+    
+<script>
+    let members=[];
+
+for (i=1;i<=3;i++){
+    let member={};
+    member.name='홍길동'+i;
+    member.age=20+i+'세';
+    member.hobby='독서'+i;
+    members.push(member);
+}
+let table=document.createElement('table');
+let tr=document.createElement('tr');
+
+table.setAttribute('border','1');
+table.append(tr);
+
+
+members.forEach(aa);
+
+function aa(a,b,c){
+    tr=document.createElement('tr');
+    for (result in a){
+    }
+}
+</script>
+</body>
+</html>

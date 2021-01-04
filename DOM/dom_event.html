@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom_event.html</title>
+</head>
+<body>
+    <button id="btn">OK</button>
+    <input type="text" id="name">
+    <script>
+        let name = document.getElementById('name');
+        name.onkeydown=function(){
+            console.log(name.value);
+            btn = document.getElementById('btn').innerHTML=name.value;
+        }
+        //console과 btn에 현재값이 그대로 들어가게
+
+        let btn = document.getElementById('btn');
+        btn.onclick = function(){
+            console.log('click');
+            window.alert('clicked');
+        }
+        btn.onmouseover=function(){
+            console.log('mouseover');
+            btn.style.background='yellow';
+        }
+        btn.onmouseout=myMouseOut;
+
+        function myMouseOut(){
+            console.log('mouseout');
+            btn.style.background='';
+        }
+        console.log(window);
+    </script>
+</body>
+</html>

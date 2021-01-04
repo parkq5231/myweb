@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 400px;
+            background: yellow;
+            position: relative;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            /* container 기준 50씩 */
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Move!!</button>
+    <div id="container">
+        <div id="animate"></div>
+    </div> 
+    <script>
+        let btn = document.getElementById('btn');
+        btn.onclick = moveStart;
+        function moveStart(){
+            console.log('start');
+            let animate = document.getElementById('animate');
+            let i = 0;
+            let myInterval = setInterval(()=>{
+                    i++;
+                    animate.style.left=i+'px';
+                    animate.style.top=i+'px';
+                    if(i==350){
+                        clearInterval(myInterval);
+                    }
+                },10);
+                // 10miliseconds 단위
+            }
+        //구구단
+        //function makeMulti()
+        //출력이 테이블식
+        //부족한 점:tdTag를 여러번 중복해서 사용할 방법이 필요
+        //     이유:a,*,i,=,(a*i) 총 5번을 사용해야 하기 때문  
+</script>
+</body>
+</html>

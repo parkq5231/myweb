@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>object_def.html</title>
+    </head>
+    <body>
+        <script>
+            function Person(name, age, hobby) {
+                this.name = name;
+                this.age = age;
+                this.hobby = hobby;
+                // this.phone = phone;
+                //constructors
+            }
+            let persons = [];
+            Person.prototype.phone = '010';
+            Person.prototype.toString=function(){
+                return this.name+','+this.age+','+this.hobby+','+this.phone;
+            }
+
+            let p1 = new Person('Park', 20, 'sleeping');
+            let p2 = new Person('Choi', 22, 'reading');
+            persons.push(p1);
+            persons.push(p2);
+            persons.push(new Person('kim', 25, 'game'));
+            // console.log(persons);
+
+            for (person of persons){
+                console.log(person.toString());
+            }
+
+            let p4 = {
+                name: 'hong',
+                age: 20,
+            }
+            Object.defineProperty(p4,'hobby',{value:'reading'});
+            console.log(p4);
+            //same  p4.hobby='reading';
+            //ESMA Script 5
+        </script>
+    </body>
+</html>

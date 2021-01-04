@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>function.html</title>
+    </head>
+    <body>
+        <div id="show"></div>
+        <script>
+            function sum(a, b) {
+                return a + b;
+            }
+            let result = sum(10, 20);
+
+            function showElement(){
+                let h1 = document.createElement('h1');
+                h1.innerHTML='hello';
+                return h1;
+            }
+            result =showElement();
+//
+            function Person(name, age, hobby) {
+                this.name = name;
+                this.age = age;
+                this.hobby = hobby;
+                // this.phone = phone;
+                //constructors
+            }
+            let persons = [];
+            Person.prototype.phone = '010';
+            // Person.prototype.toString=function(){
+            //     return this.name+','+this.age+','+this.hobby+','+this.phone;
+            // }
+            let p1 = new Person('Park', 20, 'sleeping');
+            let p2 = new Person('Choi', 22, 'reading');
+            persons.push(p1);
+            persons.push(p2);
+            persons.push(new Person('kim', 25, 'game'));            
+//
+            let table = document.createElement('table');
+            table.setAttribute('border','1');
+
+            //TH
+            function title(person){
+                person=persons;
+                let tr=document.createElement('tr');
+                for (aa of person){
+                    for (bb in aa){
+                        let th=document.createElement('th');
+                        th.innerHTML=bb;
+                        tr.append(th);
+                    }
+                }
+                table.append(tr);
+                return table;
+            }
+            result=title();
+            document.getElementById('show').append(result);
+            //TD
+            function createtable(person){
+                person=persons;
+                let td = document.createElement('td');
+                let tr = document.createElement('tr');
+                for (bb of person){
+                    tr = document.createElement('tr');
+                    for (cc in bb){
+                        td=document.createElement('td');
+                        td.innerHTML=bb[cc];
+                        tr.append(td);
+                    }
+                    table.append(tr);
+                }
+                table.append(tr);
+                return table;
+            }
+            result=createtable();
+            document.getElementById('show').append(result);
+            //
+
+            let x = (a, b) => {
+                return a + b;
+            }
+            let y = x;
+            // console.log(x(10,15));
+            // console.log(y(20,25));
+            function findMax() {
+                // console.log(arguments);
+                let max=0;
+                for(let i=0;i<arguments.length;i++){
+                    if(arguments[i]>max){
+                        max=arguments[i];
+                    }
+                }
+                return max;
+            };
+            result = findMax(1,7,9,5,4,2,12);
+            // console.log(result);
+        </script>
+    </body>
+</html>

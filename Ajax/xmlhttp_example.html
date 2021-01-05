@@ -16,6 +16,7 @@
                 let result=doc.querySelectorAll('dataset > record');
                 let table=document.createElement('table');
                 table.setAttribute('border','1');
+                //th부분 createHeader f만들기 result[0]
                 let tr = document.createElement('tr');
                 for(let i=0;i<result[0].childNodes.length;i++){
                         let td=document.createElement('th');

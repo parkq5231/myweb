@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function () {
+            // console.log(xhtp.readyState,xhtp.status);
+            if(xhtp.readyState ==4 && xhtp.status ==200){
+                // console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset > record');
+                let ulTag=document.createElement('ul');
+                for (let i=0;i<result.length;i++){
+                    let liTag=document.createElement('li');
+                    let str=result[i].childNodes[0].childNodes[0].nodeValue+' - '+
+                            result[i].childNodes[1].childNodes[0].nodeValue;
+                            let textNode=document.createTextNode(str);
+                            liTag.appendChild(textNode);
+                            ulTag.appendChild(liTag);
+                            console.log(result[i].childNodes[1])
+                }
+            let show = document.getElementById('show');
+            show.appendChild(ulTag);
+            //  show.innerHTML=xhtp.responseText;
+            }
+        }
+            xhtp.open('get','dataset.xml');
+            xhtp.send();
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        let xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            //th
+            if(xhttp.readyState==4 && xhttp.status == 200){
+                let doc=xhttp.responseXML;
+                let result=doc.querySelectorAll('dataset > record');
+                let table=document.createElement('table');
+                table.setAttribute('border','1');
+                let tr = document.createElement('tr');
+                for(let i=0;i<result[0].childNodes.length;i++){
+                        let td=document.createElement('th');
+                        let str=result[0].childNodes[i].nodeName;
+                        let text=document.createTextNode(str);
+                        td.appendChild(text);
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+            //td
+                for(let i=0;i<result.length;i++){
+                        let tr = document.createElement('tr');
+                        for(j=0;j<result[i].childNodes.length;j++){
+                            let td=document.createElement('td');
+                            let str=result[i].childNodes[j].childNodes[0].nodeValue;
+                            let text=document.createTextNode(str);
+                            td.appendChild(text);
+                            tr.appendChild(td);
+                        }
+                        table.appendChild(tr);
+                    }
+            //
+                let show = document.getElementById('show');
+                show.appendChild(table);
+            }
+        }
+        xhttp.open('get','dataset (1).xml');
+        xhttp.send();
+    </script>
+</body>
+</html>

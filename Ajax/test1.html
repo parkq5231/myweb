@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>firstName</td>
+                <td><input type='text' id='fName' name='fName' value='kildong'></td>
+            </tr>
+            <tr>
+                <td>lastName</td>
+                <td><input type='text' id='lName' name='lName' value='Hong'></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type='text' id='email' name='email' value='Khong'></td>
+            </tr>
+            <tr>
+                <td>jobId</td>
+                <td><input type='text' id='jobId' name='jobId' value='IT_DEV'></td>
+            </tr>
+            <tr align="center">
+                <td><button id='btn' onclick='saveBtn()'>저장</button></td>
+                <td><button id='btn2' onclick='inout()'>수정</button></td>
+            </tr>
+        </table>
+        <script>
+            function contentRow(result) {
+                let trTags = [];
+                for (let j = 0; j < result.length; j++) {
+                    let trTag = document.createElement('tr');
+                    for (let i = 0; i < result[0].childNodes.length; i++) {
+                        let tdTag = document.createElement('td');
+                        let textNode = document.createTextNode(
+                            result[j].childNodes[i].firstChild.nodeValue
+                        );
+                        tdTag.appendChild(textNode);
+                        trTag.appendChild(tdTag);
+                    }
+                    //td 배경색 onmouseover
+                    trTag.onmouseover = function () {
+                        trTag.style.background = 'yellow';
+                    } //onmouseout
+                    trTag.onmouseout = function () {
+                        trTag.style.background = '';
+                    } //onclick
+                    trTag.onclick = function () {
+                        trTag.style.color='red';
+                    }
+                    //append
+                    trTags.push(trTag);
+                } // for의 끝(tr)
+            }
+        </script>
+    </body>
+</html>

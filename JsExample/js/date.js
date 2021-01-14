@@ -16,15 +16,7 @@ let tr=document.createElement('tr');
 tbl.append(tr);
 calendar(2020,12);
 
-dates.forEach(function aa(a,b,c){
-    let td=document.createElement('td');
-        td.innerHTML=a;
-        tr.append(td);
-        if(dates[b] % 7 ==0){
-            tr=document.createElement('tr');
-        }
-        tbl.append(tr);
-    });
+dates.forEach(aa);
 
 function calendar(yyyy,mm){
     let today = new Date(yyyy,mm,0);
@@ -38,6 +30,15 @@ function calendar(yyyy,mm){
         dates.push(i);
     }
 }
+function aa(a,b,c){
+    let td=document.createElement('td');
+        td.innerHTML=a;
+        tr.append(td);
+        if(a != " " && a % 7 ==0){
+            tr=document.createElement('tr');
+        }
+        tbl.append(tr);
+    }
 let show =document.getElementById('show');
 show.append(tbl);
 
